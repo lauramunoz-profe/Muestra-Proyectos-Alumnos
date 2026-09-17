@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muestra de Fin de Año 2026 - 6to TC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.02);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
+            background-size: 20px 20px;
+            color: var(--text-main);
+            padding: 2.5rem 1rem;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            border: 1px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        .badge-header {
+            display: inline-block;
+            background: #e0e7ff;
+            color: #3730a3;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-header {
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 0.4rem;
+        }
+
+        .integrantes-box {
+            background: #f1f5f9;
+            padding: 0.6rem 0.8rem;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .integrantes-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #64748b;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.2rem;
+        }
+
+        .integrantes-list {
+            font-size: 0.85rem;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        .tag-php {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .tag-html {
+            background: #ffedd5;
+            color: #9a3412;
+        }
+
+        .tag-css {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .tag-js {
+            background: #fef9c3;
+            color: #854d0e;
+        }
+
+        .tag-python {
+            background: #f0fdf4;
+            color: #166534;
+        }
+
+        .tag-django {
+            background: #dcfce7;
+            color: #14532d;
+        }
+
+        .tag-java {
+            background: #ffe4e6;
+            color: #9f1239;
+        }
+
+        .tag-supabase {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            flex: 1;
+            text-align: center;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-secondary:hover {
+            background: #f8fafc;
+            border-color: #94a3b8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <span class="badge-header">6to TC — Muestra Anual 2026</span>
+        
+        <p>Explora los trabajos de desarrollo de sistemas creados por los estudiantes</p>
+    </header>
+
+    <main class="grid">
+
+        <!-- 1. DEVPRIME -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">DevPrime</div>
+
+                <div class="integrantes-box">
+                    <div class="integrantes-title">Integrantes</div>
+                    <div class="integrantes-list">
+                        • Chavez Leandro &nbsp;• Flores Oscar &nbsp;• Moreno Santino &nbsp;• Occhiuzzi Benjamín &nbsp;•
+                        Oropeza Damian
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-actions">
+                <a href="#" target="_blank" class="btn btn-primary">Ver</a>
+
+            </div>
+        </div>
+
+        <!-- 2. ARTQ-PROYECTS -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Arqu-Proyects</div>
+
+                <div class="integrantes-box">
+                    <div class="integrantes-title">Integrantes</div>
+                    <div class="integrantes-list">
+                        • Alanoca Sabrina &nbsp;• Landa Camila &nbsp;• Llanos Mayra &nbsp;• Villa Solange
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-actions">
+                <a href="#" target="_blank" class="btn btn-primary">Ver</a>
+
+            </div>
+        </div>
+
+        <!-- 3. INNOVACI-N -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Innovaci-n</div>
+
+                <div class="integrantes-box">
+                    <div class="integrantes-title">Integrantes</div>
+                    <div class="integrantes-list">
+                        • Arando Andrea &nbsp;• Arena Ailen &nbsp;• Carrasco Diego &nbsp;• Navarrete Alma
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-actions">
+                <a href="#" target="_blank" class="btn btn-primary">Ver </a>
+
+            </div>
+        </div>
+
+        <!-- 4. CORETECH -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">CoreTech</div>
+
+                <div class="integrantes-box">
+                    <div class="integrantes-title">Integrantes</div>
+                    <div class="integrantes-list">
+                        • Cardozo Brenda &nbsp;• Galvez Pedro &nbsp;• González Maite &nbsp;• Robles Natalia
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-actions">
+                <a href="#" target="_blank" class="btn btn-primary">Ver </a>
+                
+            </div>
+        </div>
+
+        <!-- 5. CONSULTORA SISTEMA -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Consultora Sistema</div>
+
+                <div class="integrantes-box">
+                    <div class="integrantes-title">Integrantes</div>
+                    <div class="integrantes-list">
+                        • Davalos Sebastian &nbsp;• Giovinazzo Ciro &nbsp;• González Matías &nbsp;• Occhiuzzi Maximiliano &nbsp;• Zamora Juan 
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-actions">
+                <a href="#" target="_blank" class="btn btn-primary">Ver </a>
+            </div>
+        </div>
+
+        <!-- 6. APP-FORGE -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">App-Forge</div>
+
+                <div class="integrantes-box">
+                    <div class="integrantes-title">Integrantes</div>
+                    <div class="integrantes-list">
+                        • Coca Brigitte &nbsp;• Arroyo Neydi &nbsp;• Villegas Romina
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div class="card-actions">
+                <a href="#" target="_blank" class="btn btn-primary">Ver </a>
+            </div>
+        </div>
+
+        <!-- 7. EMPRESA DE DESARROLLO WEB -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">Empresa de Desarrollo Web</div>
+
+                <div class="integrantes-box">
+                    <div class="integrantes-title">Integrantes</div>
+                    <div class="integrantes-list">
+                        <!-- Completar con los nombres reales de los alumnos -->
+                        • Flores Jose &nbsp;• Tapia Rafael 
+                    </div>
+                </div>
+
+                
+            </div>
+
+            <div class="card-actions">
+                <!-- Reemplazaremos '#' por la URL final del despliegue en vivo -->
+                <a href="#" target="_blank" class="btn btn-primary">Ver </a>
+               
+            </div>
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>
